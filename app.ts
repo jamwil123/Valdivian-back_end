@@ -5,8 +5,8 @@ import apiRouter from './router/api-router';
 
 dotenv.config();
 const app: Express = express();
-app.use(cors);
-app.use(express.json)
+// app.use(cors);
+// app.use(express.json)
 
 app.use("/api", apiRouter);
 app.all("*", /*error functions */)
