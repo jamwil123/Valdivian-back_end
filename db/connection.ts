@@ -4,8 +4,8 @@ dotenv.config();
 
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASSWORD;
-const dbUrl = `mongodb+srv://${dbUser}:${dbPass}@valdivian.v5qmnu1.mongodb.net/?retryWrites=true&w=majority`;
+const dbUri = `mongodb+srv://${dbUser}:${dbPass}@valdivian.v5qmnu1.mongodb.net/?retryWrites=true&w=majority`;
 
-MongoClient.connect(dbUrl).then(() => {
+const connection = MongoClient.connect(dbUri).then(() => {
   console.log('Connected to db <<<<<<<<<<<<<<<<');
 });
