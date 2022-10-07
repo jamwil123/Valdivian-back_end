@@ -7,11 +7,6 @@ const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASSWORD;
 const dbUri = `mongodb+srv://${dbUser}:${dbPass}@valdivian.v5qmnu1.mongodb.net/?retryWrites=true&w=majority`;
 
-console.log(dbUri);
-console.log(dbUser, dbPass);
-console.log(process.env);
-
-
 async function seed() {
     const client = new MongoClient(dbUri);
     console.log("client made")
@@ -39,8 +34,8 @@ seed();
 
 async function createListing(client:any, newListing:object) {
     const result = await client
-        .db("Valdivian")
-        .collection("products")
+        .db("Valdivian-db")
+        .collection("Products")
         .insertMany(newListing);
     console.log(
         `${result.insertedCount} new listing(s) created with the following id(s):`
